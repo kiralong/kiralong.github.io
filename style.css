@@ -1,0 +1,200 @@
+/* Global Variables and Styles */
+
+/* $breakpoint: 768px; */
+
+:root {
+    /* Color Scheme: https://material.io/resources/color/#!/?view.left=1&view.right=1&primary.color=5ec9ff&secondary.color=0e963d 
+        Alternative Color Scheme (darker): https://material.io/resources/color/#!/?view.left=1&view.right=1&primary.color=1a85ff&secondary.color=0f7733 
+        Thanks to https://davidmathlogic.com/colorblind/ for the advice on accessible friendly color palettes. */
+    --primary-color: #5ec9ff;
+    --primary-color-light: #97fcff;
+    --primary-color-dark: #0598cc;
+    --secondary-color: #0e963d;
+    --secondary-color-light: #54c86a;
+    --secondary-color-dark: #00670f;
+}
+
+body {
+    margin: 0!important;
+}
+
+/* Grid --------------------------------------------------------------------- */
+
+body {
+    display: grid;
+  
+    grid-template-areas:
+      "header header header"
+      "nav main side"
+      "footer footer footer";
+  
+    grid-template-columns: 240px 1fr 320px;
+    grid-template-rows: auto 1fr auto;
+    grid-gap: 10px;
+  
+    height: 100vh;
+}
+
+@media (max-width: 768px) {
+    body {
+      grid-template-areas:
+        "header"
+        "nav"
+        "main"
+        "side"
+        "footer";
+  
+      grid-template-columns: 1fr;
+      grid-template-rows:
+        auto /* Header */
+        auto /* Nav */
+        1fr /* Content */
+        auto /* Sidebar */
+        auto; /* Footer */
+    }
+  
+    nav, aside {
+      margin: 0;
+    }
+}
+
+header {
+    grid-area: header;
+  }
+  
+  nav {
+    grid-area: nav;
+    margin-left: 0.5rem;
+  }
+  
+  main {
+    grid-area: main;
+  }
+  
+  aside {
+    grid-area: side;
+    margin-right: 0.5rem;
+  }
+  
+  footer {
+    grid-area: footer;
+  }
+
+/* HEADER ------------------------------------------------------------------ */
+
+header {
+
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+    /* Gradient */
+    background-color: #0292b6;
+    /* IE9, iOS 3.2+ */
+    background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIHZpZXdCb3g9IjAgMCAxIDEiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjxsaW5lYXJHcmFkaWVudCBpZD0idnNnZyIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiIHgxPSIwJSIgeTE9IjAlIiB4Mj0iMTAwJSIgeTI9IjEwMCUiPjxzdG9wIHN0b3AtY29sb3I9IiMwMGM0ZjQiIHN0b3Atb3BhY2l0eT0iMSIgb2Zmc2V0PSIwIi8+PHN0b3Agc3RvcC1jb2xvcj0iIzAzNjA3OCIgc3RvcC1vcGFjaXR5PSIxIiBvZmZzZXQ9IjEiLz48L2xpbmVhckdyYWRpZW50PjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9InVybCgjdnNnZykiIC8+PC9zdmc+);
+    background-image: -webkit-gradient(linear, 0% 0%, 100% 100%,color-stop(0, rgb(0, 196, 244)),color-stop(1, rgb(3, 96, 120)));
+    /* Android 2.3 */
+    background-image: -webkit-repeating-linear-gradient(top left,rgb(0, 196, 244) 0%,rgb(3, 96, 120) 100%);
+    /* IE10+ */
+    background-image: repeating-linear-gradient(to bottom right,rgb(0, 196, 244) 0%,rgb(3, 96, 120) 100%);
+    background-image: -ms-repeating-linear-gradient(top left,rgb(0, 196, 244) 0%,rgb(3, 96, 120) 100%);
+}
+
+/* IE8- CSS hack */
+@media \0screen\,screen\9 {
+    header {
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ff00c4f4",endColorstr="#ff036078",GradientType=0);
+    }
+}
+
+header h1 {
+    font-size: 3em;
+    color: white;
+    padding-top: 10px;
+    margin: 0 30px 18px;
+}
+
+nav {
+    padding-left: 18px;
+
+    /* Gradient */
+    background-color: rgba(227, 227, 227, 0.5);
+    /* IE9, iOS 3.2+ */
+    background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIHZpZXdCb3g9IjAgMCAxIDEiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjxsaW5lYXJHcmFkaWVudCBpZD0idnNnZyIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiIHgxPSIwJSIgeTE9IjAlIiB4Mj0iMCUiIHkyPSIxMDAlIj48c3RvcCBzdG9wLWNvbG9yPSIjZTJlMmUyIiBzdG9wLW9wYWNpdHk9IjAuNDkiIG9mZnNldD0iMCIvPjxzdG9wIHN0b3AtY29sb3I9IiNkYmRiZGIiIHN0b3Atb3BhY2l0eT0iMC40OSIgb2Zmc2V0PSIwLjUiLz48c3RvcCBzdG9wLWNvbG9yPSIjZDFkMWQxIiBzdG9wLW9wYWNpdHk9IjAuNTEiIG9mZnNldD0iMC41MSIvPjxzdG9wIHN0b3AtY29sb3I9IiNmZWZlZmUiIHN0b3Atb3BhY2l0eT0iMC41MiIgb2Zmc2V0PSIxIi8+PC9saW5lYXJHcmFkaWVudD48cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSJ1cmwoI3ZzZ2cpIiAvPjwvc3ZnPg==);
+    background-image: -webkit-gradient(linear, 0% 0%, 0% 100%,color-stop(0, rgba(226, 226, 226, 0.49)),color-stop(0.5, rgba(219, 219, 219, 0.49)),color-stop(0.51, rgba(209, 209, 209, 0.51)),color-stop(1, rgba(254, 254, 254, 0.52)));
+    /* Android 2.3 */
+    background-image: -webkit-repeating-linear-gradient(top,rgba(226, 226, 226, 0.49) 0%,rgba(219, 219, 219, 0.49) 50%,rgba(209, 209, 209, 0.51) 51%,rgba(254, 254, 254, 0.52) 100%);
+    /* IE10+ */
+    background-image: repeating-linear-gradient(to bottom,rgba(226, 226, 226, 0.49) 0%,rgba(219, 219, 219, 0.49) 50%,rgba(209, 209, 209, 0.51) 51%,rgba(254, 254, 254, 0.52) 100%);
+    background-image: -ms-repeating-linear-gradient(top,rgba(226, 226, 226, 0.49) 0%,rgba(219, 219, 219, 0.49) 50%,rgba(209, 209, 209, 0.51) 51%,rgba(254, 254, 254, 0.52) 100%);
+}
+ 
+/* Gradient: IE8- CSS hack */
+@media \0screen\,screen\9 {
+    nav {
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#7de2e2e2",endColorstr="#85fefefe",GradientType=0);
+    }
+}
+
+nav a {
+    padding: 1px 1px;
+    margin: 3px 4px;
+    font-size: 1.4em;
+    display: block;
+}
+
+
+/* MAIN BODY ---------------------------------------------------------- */
+
+main {
+    margin: 0 10px;
+}
+
+main p:first-of-type {
+    font-weight: 200;
+    font-style: oblique;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: 10px auto;
+    background-color: lightsteelblue;
+    border-radius: 10px;
+    padding: 10px;
+    max-width: 700px;
+}
+
+#pictures img {
+    display: block;
+    margin: auto;
+    max-width: 96%;
+}
+
+aside .iframe-container > iframe {
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 98%;
+    max-width: 98%;
+    min-width: 98%;
+    height: 98%;
+    max-height: 98%;
+    min-height: 98%;
+}
+
+@media (max-width: 768px) {
+    aside {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    aside .iframe-container {
+        display: inline-block;
+        margin: 10px auto;
+        border: black 2px solid;
+        border-radius: 10px;
+        background-color: lightgray;
+    }
+
+    aside .iframe-container iframe {
+        display: block;
+        margin: 0 auto;
+    }
+}
+
