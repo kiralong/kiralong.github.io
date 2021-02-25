@@ -1,0 +1,30 @@
+title: Kira Long's Website
+tagline: Kira Long, PhD Candidate at University of Illinois at Urbana-Champaign
+description: >-
+  Kira Long is a PhD candidate in the Program in Ecology, Evolution, and Conservation Biology (PEEC)
+  at the University of Illinois at Urbana-Champaign.
+
+name: Kira Long
+email: kiralong778@gmail.com
+twitter_username: kmlong7
+github_username:  kiralong
+
+# Build settings
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "" # the base hostname & protocol for your site, e.g. http://example.com
+theme: minima
+
+include:
+ - _pages
+
+# Exclude from processing.
+# The following items will not be processed, by default. Create a custom list
+# to override the default setting.
+# exclude:
+#   - Gemfile
+#   - Gemfile.lock
+#   - node_modules
+#   - vendor/bundle/
+#   - vendor/cache/
+#   - vendor/gems/
+#   - vendor/ruby/
