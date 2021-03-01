@@ -10,12 +10,14 @@ twitter_username: kmlong7
 github_username:  kiralong
 
 # Build settings
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
-theme: minima
+url: "https://kiralong.github.io"
+# theme: minima
 
-include:
- - _pages
+lsi: true
+
+plugins:
+  - jekyll-feed
+  - classifier-reborn
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list

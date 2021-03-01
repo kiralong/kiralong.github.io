@@ -1,3 +1,5 @@
 # [kiralong.github.io](https://kiralong.github.io)
 
-Kira Long's github pages website
+[kiralong.github.io](https://kiralong.github.io) is Kira Long's website. 
+
+Built with Github Pages and Jekyll.

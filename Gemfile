@@ -1,13 +1,14 @@
 source "https://rubygems.org"
 
-# Run `bundle install` to install the gems declared in this Gemfile.
-# Run Jekyll with `bundle exec`, like so: bundle exec jekyll serve
-# To upgrade, run `bundle update github-pages`.
+# Install: Run `bundle install` to install the gems declared in this Gemfile.
+# Run: Run Jekyll with `bundle exec`, like so: bundle exec jekyll serve
+# Update: To upgrade, run `bundle update github-pages`.
 gem "github-pages", group: :jekyll_plugins
 
 # If you have any plugins, put them here!
 group :jekyll_plugins do
   gem "jekyll-feed", "~> 0.6"
+  gem 'classifier-reborn', '~> 2.2'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
